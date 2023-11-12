@@ -5,4 +5,4 @@ from rest_framework import serializers
 class SitterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Sitter
-        fields = ['id', 'family_name', 'details']
+        fields = ['id', 'family_name', 'details', 'children_age', 'hourly_wage']

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sitters.apps.SittersConfig',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    
 
 ]
 
@@ -85,10 +86,10 @@ WSGI_APPLICATION = 'honeybackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
 }
 
 

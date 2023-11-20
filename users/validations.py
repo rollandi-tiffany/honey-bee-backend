@@ -10,7 +10,7 @@ def custom_validation(data):
 
     if not email or UserModel.objects.filter(email=email).exists():
         raise ValueError("Email failed. Try again")
-    if not password or len(password) <9:
+    if not password or len(password) <0:
         raise ValueError(" Try again. Password needs to be 9 characters.")
     if not username:
         raise ValidationError("Username is taken. Choose a different username.")

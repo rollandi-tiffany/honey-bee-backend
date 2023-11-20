@@ -11,7 +11,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
-class UserSignup(generics.ListCreateAPIView):
+class UserSignup(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -21,5 +21,9 @@ class UserLogin(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
 
 class UserLogout(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

@@ -6,3 +6,6 @@ class Sitter(models.Model):
     details = models.CharField(max_length=100)
     children_age = models.IntegerField(validators=[MaxValueValidator(15)], default=0)
     hourly_wage = models.DecimalField(max_digits=5, decimal_places=2, default=20)
+
+    def __str__(self):
+        return self.family_name
